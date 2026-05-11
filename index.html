@@ -19,7 +19,8 @@ badge → classe Bootstrap qui crée une petite pastille
 bg-danger → pastille rouge
 id="badge-panier" → pour que le JS puisse modifier le chiffre
 0 → valeur initiale, le JS la mettra à jour -->
-    <nav class="navbar navbar-dark bg-dark">
+<!-- sticky-top -> fixe le navbar -->
+    <nav class="navbar sticky-top navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand">🛒 GL SHOP</a>
             <span class="navbar-text">
@@ -29,7 +30,7 @@ id="badge-panier" → pour que le JS puisse modifier le chiffre
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-8 mt-3">
+            <div class="col-12 col-md-8 mt-3">
                 <div class="card mb-3">
                     <div class="card-header">
                         <h2>Liste des Articles</h2>
@@ -38,8 +39,8 @@ id="badge-panier" → pour que le JS puisse modifier le chiffre
                 </div>
             </div>
 
-            <div class="col-4 mt-3">
-                <div class="card mb-3">
+            <div class="col-12 col-md-4 mt-3">
+                <div class="card mb-3" style="position: sticky; top: 80px;">
                     <div class="card-header">
                         <h2>Panier</h2>
                     </div>
@@ -53,8 +54,8 @@ id="badge-panier" → pour que le JS puisse modifier le chiffre
                             <div class="col-6 text-end">
                                 <h5 id="total-prix">0 FCFA</h5>
                             </div>
-                            <button class="btn btn-primary w-100 mt-3" onclick="validerPanier()">Valider</button>
                         </div>
+                         <button class="btn btn-primary w-100 mt-3" onclick="validerPanier()">Valider</button>
                     </div>
                 </div>
             </div>
