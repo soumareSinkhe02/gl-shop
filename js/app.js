@@ -78,16 +78,18 @@ function afficherPanier() {
                 </div>
             </div>        
         `;
-
-        // reduce() parcourt le panier et additionne prix * quantite de chaque article
-        // acc = accumulateur (le total en cours), commence a 0
-        // Tour 1 -> acc=0 + (125000*1) = 125000
-        // Tour 2 -> acc=125000 + (14000*2) = 153000
-        let total = panier.reduce((acc, item) => acc + (item.prix * item.quantite), 0);
-
-        // On affiche le total calcule
-        document.getElementById("total-prix").innerHTML = total + " FCFA"
     });
+    // reduce() parcourt le panier et additionne prix * quantite de chaque article
+    // acc = accumulateur (le total en cours), commence a 0
+    // Tour 1 -> acc=0 + (125000*1) = 125000
+    // Tour 2 -> acc=125000 + (14000*2) = 153000
+    let total = panier.reduce((acc, item) => acc + (item.prix * item.quantite), 0);
+
+    // On affiche le total calcule
+    document.getElementById("total-prix").innerHTML = total + " FCFA"
+
+    let totalArticles = panier.reduce((acc, item) => acc + item.quantite, 0);
+    document.getElementById("badge-panier").innerHTML = totalArticles;
 }
 function augmenter(id) {
     // On trouve l'article dans le panier par son id
@@ -116,3 +118,18 @@ function diminuer(id) {
 // push()   → ajoute un élément à la fin du tableau
 // filter() → garde les éléments qui respectent la condition
 // reduce() → réduit un tableau à une seule valeur (ex: total)
+
+// Calcule le nombre total d'articles dans le panier
+
+function validerPanier() {
+    if (panier.length === 0) {
+        alert("Votre panier est vide !");
+    }
+    else {
+        alert("Commande validee ! Merci pour votre achat.");
+        // On vide le panier
+        panier = [];
+        // On reaffiche le panier vide
+        afficherPanier();
+    }
+}

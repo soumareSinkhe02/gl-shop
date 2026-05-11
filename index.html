@@ -9,6 +9,24 @@
 </head>
 
 <body>
+    <!-- navbar -> classe Bootstrap qui ceer la barre de navigation
+    navbar-dark -> texte en blanc car fond sombre bg-dark -> font noir 
+    -->
+    <!-- On centre le contenu de la navbar avec une largeur maximale -->
+    <!-- navbar-brand -> classe Bootstrap pour le logo/nom du site, le met en evidence -->
+    <!-- navbar-text → aligne le texte verticalement dans la navbar
+badge → classe Bootstrap qui crée une petite pastille
+bg-danger → pastille rouge
+id="badge-panier" → pour que le JS puisse modifier le chiffre
+0 → valeur initiale, le JS la mettra à jour -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand">🛒 GL SHOP</a>
+            <span class="navbar-text">
+                Panier <span id="badge-panier" class="badge bg-danger">0</span>
+            </span>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-8 mt-3">
@@ -35,7 +53,7 @@
                             <div class="col-6 text-end">
                                 <h5 id="total-prix">0 FCFA</h5>
                             </div>
-                            <button class="btn btn-primary w-100 mt-3">Valider</button>
+                            <button class="btn btn-primary w-100 mt-3" onclick="validerPanier()">Valider</button>
                         </div>
                     </div>
                 </div>
